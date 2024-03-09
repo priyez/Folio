@@ -1,0 +1,79 @@
+
+.project{
+    display: flex;
+    color:#000;
+  text-decoration: none;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 100px 50px 100px;
+    border-top: 1px solid rgb(201, 201, 201);
+    cursor: pointer;
+    transition: all 0.2s;
+ 
+
+   @media only screen and (min-width: 300px) {
+    padding: 2px 2px 2px 2px;
+      }
+
+      @media only screen and (min-width: 385px) {
+        padding: 2px 2px 2px 2px;
+      }
+
+      @media only screen and (min-width: 400px) {
+        padding: 2px 2px 2px 2px;
+      }
+
+      @media only screen and (min-width: 1020px) {
+        padding: 20px 100px 20px 100px;
+      }
+   
+        
+   
+
+    h2{
+        font-size: 22.5px;
+        margin: 0px;
+        font-weight: 400;
+        transition: all 0.4s;
+        
+        @media only screen and (min-width: 300px) {
+            padding: 20px;
+              }
+        
+              @media only screen and (min-width: 385px) {
+                font-size: 20.5px;
+              }
+        
+              @media only screen and (min-width: 400px) {
+                font-size: 22.5px;
+              }
+        
+              @media only screen and (min-width: 1020px) {
+                font-size: 60px;
+              }
+    }
+
+    
+
+    p{
+        transition: all 0.4s;
+        font-weight: 300;
+    }
+
+    &:last-of-type{
+        border-bottom: 1px solid rgb(201, 201, 201);
+    }
+
+    &:hover{
+        opacity: 0.5;
+
+        h2{
+            transform: translateX(-10px);
+        }
+
+        p{
+            transform: translateX(10px);
+        }
+    }
+}
