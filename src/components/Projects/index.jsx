@@ -14,31 +14,31 @@ import AnimationContext from '../../common/contexts/animation-context';
 const projects = [
   {
     title: "Porfolio",
-    src: "c2montreal.png",
+    src: "portfolio.png",
     cat: "Front-end Dev",
     link:"http://localhost:3000/",
     color: "#000000"
   },
   {
     title: "RaevKitchen",
-    src: "officestudio.png",
+    src: "raevs.png",
     cat: "Web Dev",
-    link:"#",
-    color: "#8C8C8C"
+    link:"https://raevskitchen.com/",
+    color: "#E6FF55"
   },
   {
-    title: "Priye Blog",
-    src: "locomotive.png",
+    title: "Next js Blog with Spotify",
+    src: "blog.png",
     cat: "Front-end Dev",
-    link:"#",
-    color: "#EFE8D3"
+    link:"https://blog-three-teal-97.vercel.app/",
+    color: "#000"
   },
   {
     title: "Sabi Converter",
-    src: "silencio.png",
+    src: "sabi.png",
     cat: "Front-end Dev",
-    link:"https://localhost:3000/",
-    color: "#706D63"
+    link:"https://sabi-exchange-typescript.vercel.app/",
+    color: "#0000"
   }
 ]
 
