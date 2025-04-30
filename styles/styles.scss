@@ -61,7 +61,7 @@
 
   padding: 10px;
   overflow-y: hidden;
-
+  overflow-x: hidden;
   @media (max-width: $breakpoint-mobile) {
     padding: 0;
     overflow-y: auto;
