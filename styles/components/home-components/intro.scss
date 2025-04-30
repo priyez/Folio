@@ -1,0 +1,59 @@
+@import "../../partials/mixins";
+@import "../../partials/variables";
+@import "../../partials/base";
+@import "../../partials/nav";
+@import "../../partials/fonts";
+@import "../../partials/cards";
+
+.folio-intro {
+    order: 2;
+    width: 30%;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: $breakpoint-mobile) {
+            flex-direction: column-reverse;
+        }
+
+        &__tap {
+            display: flex;
+            padding: 0;
+            height: 40vh;
+
+            @media (max-width: $breakpoint-mobile) {
+                height: 50vh;
+            }
+
+
+        }
+
+        &__intro {
+            padding: 50px 25px;
+            // z-index: 15;
+
+            @media (max-width: $breakpoint-mobile) {
+                padding: 10px 25px;
+            }
+
+            #intro-bottom {
+                z-index: 20;
+                position: relative;
+            }
+
+            .folio-desc {
+                margin-bottom: 24px;
+                max-width: unset;
+                width: 100%;
+
+                a {
+                    color: green;
+                    text-decoration: underline;
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}

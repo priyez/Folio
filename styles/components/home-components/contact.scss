@@ -1,0 +1,83 @@
+@import "../../partials/mixins";
+@import "../../partials/variables";
+@import "../../partials/base";
+@import "../../partials/fonts";
+
+
+
+.folio-contact-m {
+    display: none;
+    font-family: $primary-font-regular;
+  
+    &__social {
+        display: flex;
+        flex-direction: column;
+        padding: 0 25px;
+        font-size: 14px;
+
+        &__link {
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 10px 0;
+
+            &__text{
+                color: $gray;
+                font-size: 14px;
+            }
+
+            .a-label {
+               width: fit-content;
+                margin: 2.5px 0;
+                &::after{
+                    content: "";
+                    height: 1px;
+                    width: 50%;
+                    transform-origin: 0;
+                    background: $black;
+                    transition: width 0.5s;
+                    position: relative;
+                    display: flex;
+                    bottom: 0;
+                    left: 0;
+                    transform: scaleX(1);
+
+                }
+
+            }
+
+            a {
+                font-weight: 800;
+                vertical-align: top;
+                display: inline-block;
+                position: relative;
+                overflow: hidden;
+                color: $black;
+                &:hover{
+                    color: $green;
+                }
+
+            }
+        }
+    }
+
+    &__marquee{
+
+        &__header{
+            width: 100%;
+            padding: 0 25px;
+        }
+
+        &__inner{
+          border: 1px solid $gray;
+            a{
+                font-size: 45px;
+                font-family:  $about-font;
+                letter-spacing: 2px;
+                white-space: nowrap;
+                &:hover{
+                    color: $green;
+                }
+            }
+        }
+    }
+}

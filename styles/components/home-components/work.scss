@@ -1,0 +1,226 @@
+@import "../../partials/mixins";
+@import "../../partials/variables";
+@import "../../partials/base";
+@import "../../partials/nav";
+@import "../../partials/fonts";
+@import "../../partials/cards";
+
+.folio-work {
+    order: 3;
+    width: 35%;
+    margin-bottom: auto;
+    margin-top: 2.5rem;
+
+    &__container {
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        position: relative;
+    }
+
+    .folio-project {
+        margin-bottom: 15px;
+        width: 75%;
+        position: relative;
+
+        @media (max-width: $breakpoint-mobile) {
+            margin-bottom: 24px;
+            width: 100%;
+        }
+        
+
+        &:nth-child(1) {
+            .folio-project-image {
+                left: 100%;
+                position: absolute;
+                display: flex;
+                background-color: rgb(30, 187, 77);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                top: 0;
+                height: 80px;
+                width: 100px;
+                opacity: 0;
+                visibility: visible;
+                transition: opacity 0.3s ease;
+
+
+                @media (max-width: $breakpoint-mobile) {
+                    display: none;
+
+                }
+            }
+
+
+
+
+
+        }
+
+        &:nth-child(2) {
+            right: 8rem;
+            z-index: 15;
+
+            .folio-project-image {
+                left: 100%;
+                position: absolute;
+                display: flex;
+                background-color: rgb(68, 132, 175);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                top: 0;
+                height: 80px;
+                width: 100px;
+                opacity: 0;
+                visibility: visible;
+                transition: opacity 0.3s ease;
+
+
+                @media (max-width: $breakpoint-mobile) {
+                    display: none;
+
+                }
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                right: 0;
+            }
+        }
+
+
+        &:nth-child(3) {
+            z-index: 2;
+            .folio-project-image {
+                left: 102%;
+                position: absolute;
+                display: flex;
+                background-color: rgb(209, 23, 169);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                top: 0%;
+                height: 80px;
+                width: 100px;
+                opacity: 0;
+                visibility: visible;
+                transition: opacity 0.3s ease;
+
+                @media (max-width: $breakpoint-mobile) {
+                    display: none;
+
+                }
+            }
+
+            .folio-project__tittle {
+                &:hover+.folio-project-image {
+                    display: flex;
+                    background-color: red;
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+
+        }
+
+        &:nth-child(4) {
+            left: 6rem;
+            text-align: end;
+
+            .folio-project-image {
+                left: -30%;
+                position: absolute;
+                display: flex;
+                background-color: rgb(88, 23, 209);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                top: 0%;
+                height: 80px;
+                width: 100px;
+                opacity: 0;
+                visibility: visible;
+                transition: opacity 0.3s ease;
+
+                @media (max-width: $breakpoint-mobile) {
+                    display: none;
+
+                }
+            }
+
+
+            @media (max-width: $breakpoint-mobile) {
+                left: 0;
+                text-align: unset;
+            }
+        }
+
+        &:nth-child(5) {
+            width: 60%;
+
+            .folio-project-image {
+                left: 105%;
+                position: absolute;
+                display: flex;
+                background-color: rgb(23, 203, 209);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                top: 0%;
+                height: 80px;
+                width: 100px;
+                opacity: 0;
+                visibility: visible;
+                transition: opacity 0.3s ease;
+
+                @media (max-width: $breakpoint-mobile) {
+                    display: none;
+
+                }
+            }
+
+
+
+            @media (max-width: $breakpoint-mobile) {
+                width: 100%;
+            }
+        }
+
+
+        &__tittle {
+            vertical-align: top;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 4px;
+            font-weight: 800;
+            cursor: pointer;
+
+
+
+
+
+            &::after {
+                content: "";
+                height: 1px;
+                width: 100%;
+                transform-origin: 0;
+                background: $black;
+                transition: width 0.5s;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform: scaleX(1);
+            }
+
+            .folio-soon {
+                color: #888;
+            }
+        }
+
+        .folio-project__tittle.hover::after {
+            width: 0;
+        }
+    }
+}

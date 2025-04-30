@@ -1,0 +1,51 @@
+@use "sass:math";
+@import "./animations";
+@import "./base";
+
+nav {
+    @include flex($align: center, $justify: space-between);
+    width: 90%;
+    height: 6.5vh;
+    margin: auto;
+    padding: 1rem 0;
+
+    @media (max-width: $breakpoint-mobile) {
+        height: 10vh;
+    }
+
+}
+
+.folio-nav {
+    justify-content: space-between;
+    display: flex;
+    position: static;
+    font-family: $card-font;
+
+    &__left {
+        color: #888;
+        // font-style: italic;
+        // font-weight: 700;
+        font-size: 13px;
+        display: flex;
+        position: relative;
+    }
+
+    &__right {
+        color: #888;
+        // font-style: italic;
+        // font-weight: 700;
+        font-size: 13px;
+        display: flex;
+        position: relative;
+
+        .time {
+            opacity: 0;
+            visibility: hidden;
+            color: #888;
+            font-style: italic;
+            font-weight: 700;
+            display: flex;
+            position: relative;
+        }
+    }
+}

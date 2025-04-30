@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Home Page -->
+  <url>
+    <loc>https://sopiriye.xyz/</loc>
+    <lastmod>2025-04-27</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Termainal -->
+  <url>
+    <loc>https://terminal.sopiriye.xyz</loc>
+    <lastmod>2025-04-27</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+ 
+  <!-- Your specific project pages (add more as needed) -->
+  <!-- <url>
+    <loc>https://yourwebsite.com/project1</loc>
+    <lastmod>2025-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yourwebsite.com/project2</loc>
+    <lastmod>2025-04-27</lastmod>
+    <priority>0.7</priority> -->
+  </url>
+  
+</urlset>

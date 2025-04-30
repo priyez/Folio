@@ -1,0 +1,130 @@
+@import "./partials/mixins";
+@import "./partials/variables";
+@import "./partials/base";
+// @import "./partials/nav";
+@import "./partials/footer";
+@import "./partials/fonts";
+@import "./partials/cards";
+
+
+// @import "./components/pages/about";
+@import "./components/home-components/experience.scss";
+@import "./components/home-components/work.scss";
+@import "./components/home-components/intro.scss";
+@import "./components/home-components/contact.scss";
+
+
+.container {
+  @include flex($direction: column);
+  width: 100%;
+  height: 85%;
+  margin: auto;
+}
+
+
+
+
+
+/*	full */
+
+.container.full .line .dot-move {
+  left: 100%;
+  // -webkit-animation: .3s anim 1;
+}
+
+.container.full .line .dot.full {
+  background: #5892fc;
+}
+
+.container.full .slider {
+  -webkit-transform: translate(-800px);
+  -ms-transform: translate(-800px);
+  transform: translate(-800px);
+}
+
+.container.full .step-two,
+.container.full .step-three {
+  clip: rect(0, 100px, 25px, 0px);
+}
+
+.container.full .step-one .liner,
+.container.full .step-two .liner {
+  width: 100%;
+}
+
+
+// preloader/transition styling ends here
+
+
+
+.folio-home {
+
+  padding: 10px;
+  overflow-y: hidden;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0;
+    overflow-y: auto;
+  }
+
+
+
+  &__section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 0;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: 2.5rem;
+    }
+
+
+    .box {
+      flex: 1;
+      padding: 5px 10px;
+      font-size: 13px;
+
+      @media (max-width: $breakpoint-mobile) {
+        padding: 0;
+        font-size: 14px;
+      }
+    }
+
+
+    // Mobile layout
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+
+      .folio-experience {
+        order: 3;
+        display: none;
+
+      }
+
+      .folio-intro {
+        order: 1;
+        width: 100%;
+      }
+
+      .folio-work {
+        order: 2;
+        width: 100%;
+        padding: 10px 25px;
+        margin-top: auto;
+        margin-bottom: 35px;
+        z-index: 2;
+      }
+
+      .folio-contact-m {
+        order: 4;
+        width: 100%;
+        display: block;
+      }
+    }
+
+  }
+}
