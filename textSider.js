@@ -5,7 +5,7 @@ import $ from 'jquery';
 import 'slick-carousel';
 
 export function initializeSlider(sliderSelector, jsonUrl, slickOptions) {
-    function init() {
+    document.addEventListener('DOMContentLoaded', function() {
         fetch(jsonUrl)
             .then(response => response.json())
             .then(data => {
@@ -22,11 +22,5 @@ export function initializeSlider(sliderSelector, jsonUrl, slickOptions) {
                 }
             })
             .catch(error => console.error('Error fetching slider content:', error));
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init(); // DOM already ready
-    }
+    });
 }
