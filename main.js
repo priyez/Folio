@@ -73,46 +73,71 @@ function cardDraggable(){
   });
 }
 
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-  }
 
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
+  function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    
+    // Check for the presence of a "header" element for dragging
+    if (document.getElementById(elmnt.id + "header")) {
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      document.getElementById(elmnt.id + "header").ontouchstart = dragTouchStart;
+    } else {
+      elmnt.onmousedown = dragMouseDown;
+      elmnt.ontouchstart = dragTouchStart;
+    }
+  
+    // Mouse down event for desktop
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      document.onmousemove = elementDrag;
+    }
+  
+    // Touch start event for mobile
+    function dragTouchStart(e) {
+      e = e || window.event;
+      e.preventDefault();
+      pos3 = e.touches[0].clientX;
+      pos4 = e.touches[0].clientY;
+      document.ontouchend = closeDragElement;
+      document.ontouchmove = elementDrag;
+    }
+  
+    // Function to move the element
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+  
+      // Update position values based on mouse or touch event
+      if (e.clientX !== undefined) { // Mouse events
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+      } else { // Touch events
+        pos1 = pos3 - e.touches[0].clientX;
+        pos2 = pos4 - e.touches[0].clientY;
+        pos3 = e.touches[0].clientX;
+        pos4 = e.touches[0].clientY;
+      }
+  
+      // Set the new position of the element
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+  
+    // Function to stop dragging
+    function closeDragElement() {
+      document.onmouseup = null;
+      document.onmousemove = null;
+      document.ontouchend = null;
+      document.ontouchmove = null;
+    }
   }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
+  
 
 function greetings(){
   document.addEventListener('DOMContentLoaded', function() {
