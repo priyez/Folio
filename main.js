@@ -184,15 +184,11 @@ function headerTextSlide(){
 
 cardDraggable();
 
-
+changeBackgroundColor();
 
 footerTextSlide();
 
-document.addEventListener('DOMContentLoaded', () => {
-  headerTextSlide();
-  changeBackgroundColor();
-});
-
+headerTextSlide();
 
 greetings();
 
